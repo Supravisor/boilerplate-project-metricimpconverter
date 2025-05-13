@@ -1,9 +1,17 @@
-function ConvertHandler() {
+function ConvertHandler(input) {
   
   this.getNum = function(input) {
-    let result;
-    
-    return result;
+    let divider = 0;
+    for (let i=0; i<input.length; i++) {
+      if (input[i] === "/") {
+        divider++;
+      }
+    }
+
+    if (divider <= 1) {
+      let result = Number(input);
+      return result;
+    }
   };
   
   this.getUnit = function(input) {
