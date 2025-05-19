@@ -1,28 +1,45 @@
-function ConvertHandler(input) {
+function ConvertHandler() {
   
   this.getNum = function(input) {
-    let divider = 0;
-    for (let i=0; i<input.length; i++) {
-      if (input[i] === "/") {
-        divider++;
-      }
-    }
-
-    if (divider <= 1) {
-      let result = Number(input);
-      return result;
-    }
+    let result = Number(input);
+    
+    return result;
   };
   
   this.getUnit = function(input) {
-    let result;
+    let result = input;
     
     return result;
   };
   
   this.getReturnUnit = function(initUnit) {
-    let result;
+    const galToL = 3.78541;
+    const lbsToKg = 0.453592;
+    const miToKm = 1.60934;
     
+
+    let result = "";
+    switch (initUnit) {
+      case "gal":
+        result = 1 * galToL;
+        break;
+      case "L":
+        result = 1 / galToL;
+        break;
+      case "lbs":
+        result = "Kg";
+        break;
+      case "Kg":
+        result = "lbs";
+        break;
+      case "mi":
+        result = "Km";
+        break;
+      case "Km":
+        result = "mi";
+        break;
+    }
+
     return result;
   };
 
