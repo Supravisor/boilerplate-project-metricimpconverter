@@ -44,8 +44,28 @@ function ConvertHandler() {
   };
 
   this.spellOutUnit = function(unit) {
-    let result;
-    
+    let result = "";
+    switch (unit) {
+      case "gal":
+        result = "L";
+        break;
+      case "L":
+        result = "gal";
+        break;
+      case "lbs":
+        result = "Kg";
+        break;
+      case "Kg":
+        result = "lbs";
+        break;
+      case "mi":
+        result = "Km";
+        break;
+      case "Km":
+        result = "mi";
+        break;
+    }
+
     return result;
   };
   
@@ -59,7 +79,7 @@ function ConvertHandler() {
   };
   
   this.getString = function(initNum, initUnit, returnNum, returnUnit) {
-    let result;
+    let result = `${initNum} ${initUnit} converts to ${returnNum} ${returnUnit}`;
     
     return result;
   };

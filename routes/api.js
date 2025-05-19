@@ -32,9 +32,8 @@ module.exports = function (app) {
       initNum: convertHandler.getNum(number),
       initUnit: convertHandler.getUnit(units),
       returnNum: convertHandler.getReturnUnit(units) * number,
-//      returnUnit: convertHandler.spellOutUnit(unit),
-      string: "123",
-
+      returnUnit: convertHandler.spellOutUnit(units),
+      string: convertHandler.getString(number, units, convertHandler.getReturnUnit(units) * number, convertHandler.spellOutUnit(units))
     });
 
 
