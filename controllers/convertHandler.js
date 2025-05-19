@@ -21,22 +21,22 @@ function ConvertHandler() {
     let result = "";
     switch (initUnit) {
       case "gal":
-        result = 1 * galToL;
+        result = galToL;
         break;
       case "L":
         result = 1 / galToL;
         break;
       case "lbs":
-        result = "Kg";
+        result = lbsToKg;
         break;
       case "Kg":
-        result = "lbs";
+        result = 1 / lbsToKg;
         break;
       case "mi":
-        result = "Km";
+        result = miToKm;
         break;
       case "Km":
-        result = "mi";
+        result = 1 / miToKm;
         break;
     }
 
