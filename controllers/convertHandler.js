@@ -40,7 +40,7 @@ function ConvertHandler() {
         break;
     }
 
-    return result;
+    return Number(result).toFixed(5);
   };
 
   this.spellOutUnit = function(unit) {
@@ -68,7 +68,33 @@ function ConvertHandler() {
 
     return result;
   };
-  
+
+  this.returnUnitString = function(initUnit) {
+    let result = "";
+    switch (initUnit) {
+      case "gal":
+        result = "liters";
+        break;
+      case "L":
+        result = "gallons";
+        break;
+      case "lbs":
+        result = "kilograms";
+        break;
+      case "Kg":
+        result = "pounds";
+        break;
+      case "mi":
+        result = "kilometers";
+        break;
+      case "Km":
+        result = "miles";
+        break;
+    }
+    return result;
+  };
+
+
   this.convert = function(initNum, initUnit) {
     const galToL = 3.78541;
     const lbsToKg = 0.453592;
