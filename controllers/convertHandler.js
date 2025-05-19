@@ -23,19 +23,19 @@ function ConvertHandler() {
       case "gal":
         result = galToL;
         break;
-      case "L":
+      case "l":
         result = 1 / galToL;
         break;
       case "lbs":
         result = lbsToKg;
         break;
-      case "Kg":
+      case "kg":
         result = 1 / lbsToKg;
         break;
       case "mi":
         result = miToKm;
         break;
-      case "Km":
+      case "km":
         result = 1 / miToKm;
         break;
     }
@@ -49,17 +49,17 @@ function ConvertHandler() {
       case "gal":
         result = "L";
         break;
-      case "L":
+      case "l":
         result = "gal";
         break;
       case "lbs":
-        result = "Kg";
+        result = "kg";
         break;
-      case "Kg":
+      case "kg":
         result = "lbs";
         break;
       case "mi":
-        result = "Km";
+        result = "km";
         break;
       case "Km":
         result = "mi";
@@ -75,19 +75,19 @@ function ConvertHandler() {
       case "gal":
         result = "liters";
         break;
-      case "L":
+      case "l":
         result = "gallons";
         break;
       case "lbs":
         result = "kilograms";
         break;
-      case "Kg":
+      case "kg":
         result = "pounds";
         break;
       case "mi":
         result = "kilometers";
         break;
-      case "Km":
+      case "km":
         result = "miles";
         break;
     }

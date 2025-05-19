@@ -24,7 +24,7 @@ module.exports = function (app) {
     }
     
     let number = (measurement.slice(0, split));
-    let units = measurement.slice(split);
+    let units = measurement.slice(split).toLowerCase();
 
     let convertHandler = new ConvertHandler();
 
