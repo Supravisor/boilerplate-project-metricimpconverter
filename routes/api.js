@@ -12,7 +12,7 @@ module.exports = function (app) {
     
     for (let i = 0; i < measurement.length; i++) {
     
-      if (Number(measurement[i]) >= 0) {
+      if (Number(measurement[i]) >= 0 || measurement[i] === ".") {
         split++;
       }
     
@@ -33,7 +33,7 @@ module.exports = function (app) {
       initUnit: convertHandler.getUnit(units),
       returnNum: convertHandler.getReturnUnit(units) * number,
       returnUnit: convertHandler.spellOutUnit(units),
-      string: convertHandler.getString(number, units, convertHandler.getReturnUnit(units) * number, convertHandler.returnUnitString(units))
+      string: convertHandler.getString(number, convertHandler.returnUnitString(convertHandler.spellOutUnit(units)), convertHandler.getReturnUnit(units) * number, convertHandler.returnUnitString(units))
     });
 
 

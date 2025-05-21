@@ -61,7 +61,7 @@ function ConvertHandler() {
       case "mi":
         result = "km";
         break;
-      case "Km":
+      case "km":
         result = "mi";
         break;
     }
