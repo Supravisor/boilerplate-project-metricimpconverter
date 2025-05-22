@@ -33,7 +33,7 @@ module.exports = function (app) {
       initUnit: convertHandler.getUnit(units),
       returnNum: convertHandler.getReturnUnit(units) * number,
       returnUnit: convertHandler.spellOutUnit(units),
-      string: convertHandler.getString(number, convertHandler.returnUnitString(convertHandler.spellOutUnit(units)), convertHandler.getReturnUnit(units) * number, convertHandler.returnUnitString(units))
+      string: convertHandler.getString(number, convertHandler.getUnit(units), Number(convertHandler.getReturnUnit(units) * number).toFixed(5), convertHandler.returnUnitString(units))
     });
 
 

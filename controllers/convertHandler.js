@@ -7,8 +7,28 @@ function ConvertHandler() {
   };
   
   this.getUnit = function(input) {
-    let result = input;
-    
+    let result = "";
+    switch (input) {
+      case "gal":
+        result = "gallons";
+        break;
+      case "l":
+        result = "liters";
+        break;
+      case "lbs":
+        result = "pounds";
+        break;
+      case "kg":
+        result = "kilograms";
+        break;
+      case "mi":
+        result = "miles";
+        break;
+      case "km":
+        result = "kilometers";
+        break;
+    }
+
     return result;
   };
   
@@ -40,7 +60,7 @@ function ConvertHandler() {
         break;
     }
 
-    return Number(result).toFixed(5);
+    return Number(result);
   };
 
   this.spellOutUnit = function(unit) {
