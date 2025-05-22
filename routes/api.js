@@ -9,31 +9,41 @@ module.exports = function (app) {
     let measurement = req.query.input;
     let split = 0;
     let divider = 0;
-    
+
     for (let i = 0; i < measurement.length; i++) {
-    
+
       if (Number(measurement[i]) >= 0 || measurement[i] === ".") {
         split++;
       }
-    
+
       if (measurement[i] === "/") {
         divider++;
         split++;
       }
-    
-    }
-    
-    let number = (measurement.slice(0, split));
-    let units = measurement.slice(split).toLowerCase();
+  
+      if (divider > 1) {
+        number = "invalid number";
+      }
 
-    let convertHandler = new ConvertHandler();
+    }
+
+let number = 0;
+if (split === 0) {
+  number = "invalid number";
+} else {
+  number = (measurement.slice(0, split));
+}
+
+let units = measurement.slice(split).toLowerCase();
+
+let convertHandler = new ConvertHandler();
 
     res.json({
       initNum: convertHandler.getNum(number),
       initUnit: convertHandler.getUnit(units),
-      returnNum: convertHandler.getReturnUnit(units) * number,
-      returnUnit: convertHandler.spellOutUnit(units),
-      string: convertHandler.getString(number, convertHandler.getUnit(units), Number(convertHandler.getReturnUnit(units) * number).toFixed(5), convertHandler.returnUnitString(units))
+      returnNum: convertHandler.convert(number, units),
+      returnUnit: convertHandler.getReturnUnit(units),
+      string: convertHandler.getString(convertHandler.getNum(number), convertHandler.spellOutUnit(convertHandler.getUnit(units)), convertHandler.convert(number, units), convertHandler.spellOutUnit(convertHandler.getReturnUnit(units)))
     });
 
 
