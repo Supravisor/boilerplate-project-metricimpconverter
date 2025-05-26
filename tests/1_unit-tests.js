@@ -176,5 +176,13 @@ suite('Unit Tests', function(){
           "convert 3L to 0.79252gal"
         );
       });
+
+      test("Converting mi to km", () => {
+        assert.strictEqual(
+          convertHandler.convert(4, "mi"),
+          6.43736,
+          "Correctly convert 2mi to 6.43736km"
+        );
+      });
   
 });
