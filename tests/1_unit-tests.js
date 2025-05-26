@@ -169,4 +169,12 @@ suite('Unit Tests', function(){
         );
       });
 
+      test("Converting L to gal", () => {
+        assert.strictEqual(
+          convertHandler.convert(3, "l"),
+          0.79252,
+          "convert 3L to 0.79252gal"
+        );
+      });
+  
 });
