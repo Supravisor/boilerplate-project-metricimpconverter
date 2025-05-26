@@ -1,12 +1,25 @@
 function ConvertHandler() {
+
+  this.getInit = function(input) {
+    let result = input;
+    if (result.length > 2 && result.includes("/")) {
+      return result.replace("/", " / ");
+    } else {
+      return input;
+    }
+
+  }
   
   this.getNum = function(input) {
     let result = input;
-    
-    if (input === "invalid number") {
-      return input;
-    } else {
+
+    if (result.length > 2 && result.includes("/")) {
+      let fraction = result.split("/");
+      return Number((fraction[0] / fraction [1]).toFixed(3));
+    } else if (Number(input) >= 0) {
       return Number(input);
+    } else {
+      return "invalid number";
     }
   };
   
@@ -90,6 +103,8 @@ function ConvertHandler() {
       case "km":
         result = "kilometers";
         break;
+      default:
+        result = "invalid unit"
     }
     return result;
   };
@@ -121,13 +136,21 @@ function ConvertHandler() {
         break;
     }
 
-    return Number(result * initNum).toFixed(5);
+    return Number((result * initNum).toFixed(5));
   };
   
   this.getString = function(initNum, initUnit, returnNum, returnUnit) {
-    let result = `${initNum} ${initUnit} converts to ${returnNum} ${returnUnit}`;
     
-    return result;
+    if (initNum === "invalid number" && initUnit === "invalid unit") {
+      return "invalid number and unit";
+    } else if (initNum === "invalid number") {
+      return 'invalid number';
+    } else if (initUnit === "invalid unit") {
+      return 'invalid unit';
+    } else {
+        let result = `${initNum} ${initUnit} converts to ${returnNum} ${returnUnit}`;
+        return result;
+    }
   };
   
 }
