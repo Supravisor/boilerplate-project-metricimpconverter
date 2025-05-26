@@ -66,16 +66,6 @@ suite('Unit Tests', function(){
            "read L"
         );
         assert.strictEqual(
-          convertHandler.getUnit("mi"),
-          "mi",
-          "read mi"
-        );
-        assert.strictEqual(
-          convertHandler.getUnit("km"),
-          "km",
-          "read km"
-        );
-        assert.strictEqual(
           convertHandler.getUnit("lbs"),
           "lbs",
           "read lbs"
@@ -84,6 +74,16 @@ suite('Unit Tests', function(){
           convertHandler.getUnit("kg"),
           "kg",
           "read kg"
+        );
+        assert.strictEqual(
+          convertHandler.getUnit("mi"),
+          "mi",
+          "read mi"
+        );
+        assert.strictEqual(
+          convertHandler.getUnit("km"),
+          "km",
+          "read km"
         );
       });
 
@@ -97,24 +97,19 @@ suite('Unit Tests', function(){
 
       test("return unit for valid input unit", () => {
         assert.strictEqual(
-          convertHandler.getReturnUnit("gal"),
-          "L",
-          "return L for gal"
-        );
-        assert.strictEqual(
           convertHandler.getReturnUnit("L"),
           "gal",
           "return gal for L"
         );
         assert.strictEqual(
-          convertHandler.getReturnUnit("mi"),
-          "km",
-          "return km for mi"
+          convertHandler.getReturnUnit("gal"),
+          "L",
+          "return L for gal"
         );
         assert.strictEqual(
-          convertHandler.getReturnUnit("km"),
-          "mi",
-          "return mi for km"
+          convertHandler.getReturnUnit("kg"),
+          "lbs",
+          "return lbs for kg"
         );
         assert.strictEqual(
           convertHandler.getReturnUnit("lbs"),
@@ -122,10 +117,48 @@ suite('Unit Tests', function(){
           "return kg for lbs"
         );
         assert.strictEqual(
-          convertHandler.getReturnUnit("kg"),
-          "lbs",
-          "return lbs for kg"
+          convertHandler.getReturnUnit("km"),
+          "mi",
+          "return mi for km"
+        );
+        assert.strictEqual(
+          convertHandler.getReturnUnit("mi"),
+          "km",
+          "return km for mi"
         );
       });
 
+      test("full unit name", () => {
+        assert.strictEqual(
+          convertHandler.spellOutUnit("gal"),
+          "gallons",
+          "return gallons for gal"
+        );
+        assert.strictEqual(
+          convertHandler.spellOutUnit("L"),
+          "liters",
+          "return liters for L"
+        );
+        assert.strictEqual(
+          convertHandler.spellOutUnit("mi"),
+          "miles",
+          "return miles for mi"
+        );
+        assert.strictEqual(
+          convertHandler.spellOutUnit("km"),
+          "kilometers",
+          "return kilometers for km"
+        );
+        assert.strictEqual(
+          convertHandler.spellOutUnit("lbs"),
+          "pounds",
+          "return pounds for lbs"
+        );
+        assert.strictEqual(
+          convertHandler.spellOutUnit("kg"),
+          "kilograms",
+          "return kilograms for kg"
+        );
+      });
+  
 });
