@@ -200,5 +200,13 @@ suite('Unit Tests', function(){
           "convert 6 lbs to 2.72155 kg"
         );
       });
-  
+
+      test("convert kg to lbs", () => {
+        assert.strictEqual(
+          convertHandler.convert(7, "kg"),
+          15.43237,
+          "convert 7 kg to 15.43.237 lbs"
+        );
+      });
+
 });
