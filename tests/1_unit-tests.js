@@ -161,7 +161,7 @@ suite('Unit Tests', function(){
         );
       });
 
-      test("Converting gal to L", () => {
+      test("convert gal to L", () => {
         assert.strictEqual(
           convertHandler.convert(1, "gal"),
           3.78541,
@@ -169,7 +169,7 @@ suite('Unit Tests', function(){
         );
       });
 
-      test("Converting L to gal", () => {
+      test("convert L to gal", () => {
         assert.strictEqual(
           convertHandler.convert(3, "l"),
           0.79252,
@@ -177,7 +177,7 @@ suite('Unit Tests', function(){
         );
       });
 
-      test("Converting mi to km", () => {
+      test("convert mi to km", () => {
         assert.strictEqual(
           convertHandler.convert(4, "mi"),
           6.43736,
@@ -185,11 +185,19 @@ suite('Unit Tests', function(){
         );
       });
 
-      test("Converting km to mi", () => {
+      test("convert km to mi", () => {
         assert.strictEqual(
           convertHandler.convert(5, "km"),
           3.10686,
           "convert 5 km to 3.10686 mi"
+        );
+      });
+
+      test("convert lbs to kg", () => {
+        assert.strictEqual(
+          convertHandler.convert(6, "lbs"),
+          2.72155,
+          "convert 6 lbs to 2.72155 kg"
         );
       });
   
