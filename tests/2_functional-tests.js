@@ -23,5 +23,27 @@ suite('Functional Tests', function() {
             done();
           });
       });
+
+      test("GET /api/convert?input=32g", (done) => {
+        chai
+          .request(server)
+          .get("/api/convert?input=32g")
+          .end((req, res) => {
+            assert.equal(res.status, 200);
+            assert.equal(res.body, 'invalid unit');
+            done();
+          });
+      });
+
+      test("GET /api/convert?input=3/7.2/4kg", (done) => {
+        chai
+          .request(server)
+          .get("/api/convert?input=3/7.2/4kg")
+          .end((req, res) => {
+            assert.equal(res.status, 200);
+            assert.equal(res.body, "invalid number");
+            done();
+          });
+      });
     
 });
