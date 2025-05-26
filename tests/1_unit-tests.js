@@ -165,7 +165,7 @@ suite('Unit Tests', function(){
         assert.strictEqual(
           convertHandler.convert(1, "gal"),
           3.78541,
-          "convert 1gal to 7.57082L"
+          "convert 1 gal to 7.57082 L"
         );
       });
 
@@ -173,7 +173,7 @@ suite('Unit Tests', function(){
         assert.strictEqual(
           convertHandler.convert(3, "l"),
           0.79252,
-          "convert 3L to 0.79252gal"
+          "convert 3 L to 0.79252 gal"
         );
       });
 
@@ -181,7 +181,15 @@ suite('Unit Tests', function(){
         assert.strictEqual(
           convertHandler.convert(4, "mi"),
           6.43736,
-          "Correctly convert 2mi to 6.43736km"
+          "convert 4 mi to 6.43736 km"
+        );
+      });
+
+      test("Converting km to mi", () => {
+        assert.strictEqual(
+          convertHandler.convert(5, "km"),
+          3.10686,
+          "convert 5 km to 3.10686 mi"
         );
       });
   
