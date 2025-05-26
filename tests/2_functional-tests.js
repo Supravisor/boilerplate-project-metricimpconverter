@@ -45,5 +45,16 @@ suite('Functional Tests', function() {
             done();
           });
       });
+
+      test("GET /api/convert?input=3/7.2/4kilomegagram", (done) => {
+        chai
+          .request(server)
+          .get("/api/convert?input=3/7.2/4kilomegagram")
+          .end((req, res) => {
+            assert.equal(res.status, 200);
+            assert.equal(res.body, "invalid number and unit");
+            done();
+          });
+      });
     
 });
