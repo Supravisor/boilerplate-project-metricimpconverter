@@ -13,5 +13,13 @@ suite('Unit Tests', function(){
           "read valid whole number input"
         );
       });
-  
+
+      test("valid decimal input", () => {
+        assert.strictEqual(
+          convertHandler.getNum("1.5"),
+          1.5,
+          "read valid decimal input"
+        );
+      });
+
 });
